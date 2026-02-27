@@ -1,0 +1,3 @@
+/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/build/CMakeFiles/RENDERP.dir
+/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/build/CMakeFiles/edit_cache.dir
+/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/build/CMakeFiles/rebuild_cache.dir

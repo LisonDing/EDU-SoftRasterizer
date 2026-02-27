@@ -1,0 +1,70 @@
+#pragma once
+#include <cstdint>
+#include <fstream>
+#include <vector>
+
+#pragma pack(push,1)
+struct TGAHeader {
+    std::uint8_t  idlength = 0;
+    std::uint8_t  colormaptype = 0;
+    std::uint8_t  datatypecode = 0;
+    std::uint16_t colormaporigin = 0;
+    std::uint16_t colormaplength = 0;
+    std::uint8_t  colormapdepth = 0;
+    std::uint16_t x_origin = 0;
+    std::uint16_t y_origin = 0;
+    std::uint16_t width = 0;
+    std::uint16_t height = 0;
+    std::uint8_t  bitsperpixel = 0;
+    std::uint8_t  imagedescriptor = 0;
+};
+#pragma pack(pop)
+
+struct TGAColor {
+    // TGA 内部存储顺序为 BGRA
+    std::uint8_t bgra[4] = {0,0,0,0};
+    std::uint8_t bytespp = 4;
+
+    // 1. 默认构造函数
+    TGAColor() = default;
+
+    // 2. RGBA 构造函数 (核心修复)
+    // 注意：输入是 R,G,B，内部存储会自动存为 B,G,R
+    TGAColor(std::uint8_t R, std::uint8_t G, std::uint8_t B, std::uint8_t A=255) : bgra{B,G,R,A}, bytespp(4) { }
+
+    // 3. 灰度构造函数
+    TGAColor(std::uint8_t v) : bgra{v,0,0,0}, bytespp(1) { }
+
+    // 4. 从原始数据构造 (用于读取文件)
+    TGAColor(const std::uint8_t *p, std::uint8_t bpp) : bgra{0,0,0,255}, bytespp(bpp) {
+        for (int i=0; i<bpp; i++) bgra[i] = p[i];
+    }
+
+    std::uint8_t& operator[](const int i) { return bgra[i]; }
+    const std::uint8_t& operator[](const int i) const { return bgra[i]; }
+};
+
+struct TGAImage {
+    enum Format { GRAYSCALE=1, RGB=3, RGBA=4 };
+    TGAImage() = default;
+    
+    // 修改默认参数，使用显式构造
+    TGAImage(const int w, const int h, const int bpp, TGAColor c = TGAColor(0,0,0,0));
+    
+    bool  read_tga_file(const std::string filename);
+    bool write_tga_file(const std::string filename, const bool vflip=true, const bool rle=true) const;
+    void flip_horizontally();
+    void flip_vertically();
+    TGAColor get(const int x, const int y) const;
+    void set(const int x, const int y, const TGAColor &c);
+    int width()  const;
+    int height() const;
+    void clear();
+    std::uint8_t* buffer();
+private:
+    bool   load_rle_data(std::ifstream &in);
+    bool unload_rle_data(std::ofstream &out) const;
+    int w = 0, h = 0;
+    std::uint8_t bpp = 0;
+    std::vector<std::uint8_t> data = {};
+};

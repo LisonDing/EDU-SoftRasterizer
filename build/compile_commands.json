@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/build",
+  "command": "/usr/bin/clang++  -I\"/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/src\" -I/opt/X11/include -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/RENDERP.dir/src/application/app.cpp.o -c \"/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/src/application/app.cpp\"",
+  "file": "/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/src/application/app.cpp",
+  "output": "CMakeFiles/RENDERP.dir/src/application/app.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/build",
+  "command": "/usr/bin/clang++  -I\"/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/src\" -I/opt/X11/include -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/RENDERP.dir/src/core/gl.cpp.o -c \"/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/src/core/gl.cpp\"",
+  "file": "/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/src/core/gl.cpp",
+  "output": "CMakeFiles/RENDERP.dir/src/core/gl.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/build",
+  "command": "/usr/bin/clang++  -I\"/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/src\" -I/opt/X11/include -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/RENDERP.dir/src/core/model.cpp.o -c \"/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/src/core/model.cpp\"",
+  "file": "/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/src/core/model.cpp",
+  "output": "CMakeFiles/RENDERP.dir/src/core/model.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/build",
+  "command": "/usr/bin/clang++  -I\"/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/src\" -I/opt/X11/include -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/RENDERP.dir/src/main.cpp.o -c \"/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/src/main.cpp\"",
+  "file": "/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/src/main.cpp",
+  "output": "CMakeFiles/RENDERP.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/build",
+  "command": "/usr/bin/clang++  -I\"/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/src\" -I/opt/X11/include -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles/RENDERP.dir/src/platform/tgaimage.cpp.o -c \"/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/src/platform/tgaimage.cpp\"",
+  "file": "/Users/admin/Desktop/CG/Render/Soft Rasterizer/RenderP/src/platform/tgaimage.cpp",
+  "output": "CMakeFiles/RENDERP.dir/src/platform/tgaimage.cpp.o"
+}
+]

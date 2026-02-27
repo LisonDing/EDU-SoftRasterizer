@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/opt/X11/include"  // <--- 【添加这一行】
+            ],
+            // ... 其他设置 ...
+        }
+    ],
+    // ...
+}
